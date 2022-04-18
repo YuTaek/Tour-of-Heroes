@@ -2,6 +2,7 @@
      Pipes are a good way to format strings, currency amounts, dates, and other data 
      *ngfor is Angular's repeater director that repeats host element for each item in list-->
 <h2>My Heroes</h2>
+
 <ul class="heroes">
      <li *ngFor="let hero of heroes">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
@@ -9,14 +10,5 @@
      </li>
  </ul>
 
- <div *ngIf="selectedHero">
-
-     <h2>{{selectedHero.name | uppercase}} Details</h2>
-     <div>id: {{selectedHero.id}}</div>
-     <div>
-       <label for="hero-name">Hero name: </label>
-       <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-     </div>
-   
-   </div>
-   header="src/app/heroes/heroes.component.html (HeroesComponent's template)"
+ 
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
